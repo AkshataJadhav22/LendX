@@ -43,20 +43,6 @@ Repayment
 Score Updates
 ```
 
-## Credit Score
-
-The current scoring system uses a weighted combination of:
-
-| Factor                   | Weight |
-| ------------------------ | -----: |
-| Transaction Consistency  |    25% |
-| Bill Payment Reliability |    20% |
-| Business Formalization   |    15% |
-| Community Trust          |    15% |
-| Repayment History        |    25% |
-
-The score also provides a breakdown of how much each factor contributed.
-
 ## Tech Stack
 
 **Frontend**
