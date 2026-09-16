@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FDFCFB;
+    color: #141414;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: #55DD4A;
+    color: #122315;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #F4F1E8; }
+  ::-webkit-scrollbar-thumb { background: #122315; border-radius: 3px; }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-neon-green text-forest-black font-semibold px-6 py-3 rounded-xl 
+           hover:bg-neon-soft hover:shadow-neon transition-all duration-200 
+           active:scale-95 inline-flex items-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply border border-forest-black text-forest-black font-semibold px-6 py-3 rounded-xl
+           hover:bg-forest-black hover:text-cream transition-all duration-200
+           active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .btn-outline-light {
+    @apply border border-cream text-cream font-semibold px-6 py-3 rounded-xl
+           hover:bg-cream hover:text-forest-black transition-all duration-200
+           active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply text-forest-black font-semibold px-4 py-2 rounded-lg
+           hover:bg-cream-soft transition-all duration-200 inline-flex items-center gap-2;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-cream-white rounded-xl3 shadow-card border border-cream-soft
+           hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  .card-dark {
+    @apply bg-forest-black rounded-xl3 shadow-card border border-forest-deep;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-green {
+    @apply badge bg-neon-green/20 text-forest-black border border-neon-green/40;
+  }
+
+  .badge-lime {
+    @apply badge bg-lime/20 text-forest-black border border-lime/40;
+  }
+
+  .badge-red {
+    @apply badge bg-red-100 text-red-700 border border-red-200;
+  }
+
+  .badge-yellow {
+    @apply badge bg-yellow-100 text-yellow-700 border border-yellow-200;
+  }
+
+  .badge-sky {
+    @apply badge bg-sky/20 text-forest-deep border border-sky/40;
+  }
+
+  /* Section patterns */
+  .section-dark {
+    @apply bg-forest-black text-cream py-20 md:py-32;
+  }
+
+  .section-light {
+    @apply bg-cream-soft py-20 md:py-32;
+  }
+
+  .section-white {
+    @apply bg-cream-white py-20 md:py-32;
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-cream-soft bg-cream-white
+           text-forest-black placeholder-muted-green
+           focus:outline-none focus:border-neon-green focus:ring-2 focus:ring-neon-green/20
+           transition-all duration-200;
+  }
+
+  .input-dark {
+    @apply w-full px-4 py-3 rounded-xl border border-forest-deep bg-forest-deep/50
+           text-cream placeholder-muted-green
+           focus:outline-none focus:border-neon-green focus:ring-2 focus:ring-neon-green/20
+           transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-forest-black mb-2;
+  }
+
+  .label-light {
+    @apply block text-sm font-semibold text-cream/70 mb-2;
+  }
+
+  /* Score gauge colors */
+  .score-poor { color: #EF4444; }
+  .score-fair { color: #F59E0B; }
+  .score-good { color: #3B82F6; }
+  .score-excellent { color: #55DD4A; }
+
+  /* Navbar */
+  .nav-link {
+    @apply text-cream/80 hover:text-cream font-medium text-sm transition-colors duration-200
+           uppercase tracking-wider;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply h-2 rounded-full bg-cream-soft overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+  }
+
+  /* Step tracker */
+  .step-active {
+    @apply w-8 h-8 rounded-full bg-neon-green text-forest-black flex items-center justify-center text-sm font-bold;
+  }
+  
+  .step-done {
+    @apply w-8 h-8 rounded-full bg-forest-black text-neon-green flex items-center justify-center text-sm font-bold;
+  }
+
+  .step-pending {
+    @apply w-8 h-8 rounded-full bg-cream-soft text-muted-green flex items-center justify-center text-sm font-bold border-2 border-cream-soft;
+  }
+
+  /* Table */
+  .table-header {
+    @apply text-xs font-semibold text-muted-green uppercase tracking-wider px-4 py-3 text-left;
+  }
+
+  .table-cell {
+    @apply px-4 py-4 text-sm text-forest-black;
+  }
+
+  /* Floating pill */
+  .floating-pill {
+    @apply fixed bottom-6 right-6 btn-primary shadow-neon-lg z-50 text-sm;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #55DD4A, #D8FF62);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(253, 252, 251, 0.08);
+    border: 1px solid rgba(253, 252, 251, 0.12);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(18, 35, 21, 0.85);
+    border: 1px solid rgba(85, 221, 74, 0.15);
+  }
+}
